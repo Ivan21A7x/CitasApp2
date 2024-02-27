@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { FileUploadModule } from 'ng2-file-upload'
 
 @NgModule({
   declarations: [],
@@ -16,11 +18,17 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
       preventDuplicates: false,
       progressBar: true
     }),
+    NgxSpinnerModule.forRoot({
+      type: 'ball-scale-multiple'
+    }),
+    FileUploadModule,
   ],
   exports: [
     BsDropdownModule,
     ToastrModule,
-    TabsModule
+    TabsModule,
+    NgxSpinnerModule,
+    FileUploadModule,
   ]
 })
 export class SharedModule { }
