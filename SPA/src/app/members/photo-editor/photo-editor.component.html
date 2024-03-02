@@ -1,5 +1,5 @@
 <div class="row mb-3" *ngIf="member">
-    <div class="col-2" *ngFor="let photo of member.photos">
+    <div class="col-2 mb-2" *ngFor="let photo of member.photos">
         <img src="{{photo.url}}" alt="photo of user" class="img-thumbnail mb-1">
         <div class="text-center">
             <button class="btn btn-sm btn-info">Principal</button>
@@ -13,6 +13,7 @@
         <h3>Agregar fotos</h3>
         <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
             [uploader]="uploader" class="card bg-faded p-3 text-center mb-3 my-drop-zone">
+            <i class="fa fa-upload fa-3x"></i>
             Arrastra tus fotos aquí
         </div>
         Multiple
@@ -40,7 +41,7 @@
 
         <div>
             <div>
-                Queue progress:
+                Progreso:
                 <div class="progress">
                     <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader?.progress + '%' }">
                     </div>
